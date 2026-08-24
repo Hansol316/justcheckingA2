@@ -1,0 +1,1055 @@
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+
+/* ==================================================
+   NAVIGATION BAR
+================================================== */
+
+.navbar {
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 25px;
+    padding-right: 45px;
+
+    position: relative;
+    z-index: 100;
+
+    background-image: url("images/bar.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+/* ==================================================
+   LOGO
+================================================== */
+
+.logo-link {
+    display: block;
+    flex-shrink: 0;
+}
+
+.logo {
+    display: block;
+
+    width: 77px;
+    height: auto;
+}
+
+
+
+/* ==================================================
+   NAVIGATION LINKS
+================================================== */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+    margin-left: 35px;
+}
+
+.nav-links a {
+    display: block;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.nav-links img {
+    display: block;
+
+    width: auto;
+    height: 20px;
+}
+
+.nav-links a:hover {
+    transform: translateY(-2px);
+    opacity: 0.75;
+}
+
+
+
+/* ==================================================
+   HOME
+================================================== */
+
+.home {
+    width: 100%;
+
+    /*
+       Navbar가 70px이므로
+       남은 화면을 정확하게 사용
+    */
+    height: calc(100vh - 70px);
+    min-height: 0;
+
+    position: relative;
+
+    background-image: url("images/dotbackground.png");
+    background-size: 1440px auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+
+
+/* ==================================================
+   TICKET AREA
+================================================== */
+
+.ticket-area {
+    width: 90%;
+    max-width: 1100px;
+
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+    justify-items: center;
+}
+
+
+
+/* ==================================================
+   TICKET
+================================================== */
+
+.ticket {
+    position: relative;
+
+    width: 100%;
+    max-width: 400px;
+}
+
+
+
+/* ==================================================
+   LEFT TICKET
+================================================== */
+
+.ticket-left {
+    position: relative;
+
+    width: 100%;
+
+    cursor: crosshair;
+}
+
+
+
+/* ==================================================
+   BASE TICKET
+================================================== */
+
+.ticket-base {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+
+/* ==================================================
+   SCRATCH CANVAS
+================================================== */
+
+.scratch-canvas {
+    position: absolute;
+
+    top: 22%;
+    left: 19.5%;
+
+    width: 63%;
+    height: 63%;
+
+    display: block;
+
+    z-index: 2;
+
+    cursor: crosshair;
+
+    object-fit: contain;
+}
+
+
+
+/* ==================================================
+   TICKET STICKER
+================================================== */
+
+.ticket-sticker {
+    position: absolute;
+
+    top: 23%;
+    left: 26%;
+
+    width: 63%;
+    height: 63%;
+
+    display: block;
+
+    z-index: 3;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+
+
+/* ==================================================
+   RIGHT TICKET
+================================================== */
+
+.ticket-right {
+    position: relative;
+
+    width: 100%;
+
+    overflow: visible;
+}
+
+
+
+/* ==================================================
+   CONTACT
+================================================== */
+
+.contact {
+    width: 100%;
+    min-height: 50px;
+
+    background-color: #b8a08f;
+}
+
+
+
+/* ==================================================
+   TABLET
+   834 × 1194
+================================================== */
+
+@media (max-width: 1024px) {
+
+    /* ------------------------------
+       NAVIGATION
+    ------------------------------ */
+
+    .navbar {
+        height: 70px;
+
+        padding-left: 20px;
+        padding-right: 25px;
+    }
+
+    .logo {
+        width: 70px;
+    }
+
+    .nav-links {
+        gap: 25px;
+        margin-left: 25px;
+    }
+
+    .nav-links img {
+        height: 16px;
+    }
+
+
+
+    /* ------------------------------
+       HOME
+    ------------------------------ */
+
+    .home {
+        height: calc(100vh - 70px);
+
+        background-size: 1440px auto;
+        background-position: center top;
+    }
+
+
+
+    /* ------------------------------
+       TICKET AREA
+    ------------------------------ */
+
+    .ticket-area {
+        width: 92%;
+        max-width: 900px;
+
+        height: 100%;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px;
+    }
+
+
+
+    /* ------------------------------
+       TICKET
+    ------------------------------ */
+
+    .ticket {
+        width: 100%;
+        max-width: 330px;
+    }
+
+}
+
+
+
+/* ==================================================
+   PHONE
+   393 × 852
+================================================== */
+
+@media (max-width: 600px) {
+
+    /* ------------------------------
+       NAVIGATION
+    ------------------------------ */
+
+    .navbar {
+        height: 60px;
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .logo {
+        width: 58px;
+    }
+
+    .nav-links {
+        gap: 14px;
+        margin-left: 18px;
+    }
+
+    .nav-links img {
+        height: 11px;
+    }
+
+
+
+    /* ------------------------------
+       HOME
+    ------------------------------ */
+
+    .home {
+        height: calc(100vh - 60px);
+
+        background-size: cover;
+        background-position: center top;
+    }
+
+
+
+    /* ------------------------------
+       TICKET AREA
+    ------------------------------ */
+
+    .ticket-area {
+        width: 90%;
+
+        height: auto;
+        min-height: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+
+
+    /* ------------------------------
+       TICKET
+    ------------------------------ */
+
+    .ticket {
+        width: 100%;
+        max-width: 290px;
+    }
+
+
+
+    /* ------------------------------
+       CONTACT
+    ------------------------------ */
+
+    .contact {
+        min-height: 40px;
+    }
+
+}
+
+///////////////////
+///////////////////
+////////////////////* ==================================================
+   RIGHT STICKER AREA
+================================================== */
+/* ===*/
+
+/* ==================================================
+   RIGHT TICKET
+================================================== */
+/* ==================================================
+   RIGHT TICKET
+================================================== */
+
+.ticket-right {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+
+
+/* ==================================================
+   STICKER AREA
+   ⭐ 기준 크기 고정
+================================================== */
+
+.sticker-area {
+    position: relative;
+
+    width: 700px;
+    height: 700px;
+
+    margin-left: auto;
+    margin-right: 4vw;
+
+    overflow: visible;
+
+    transform:
+        translate(-20vw, 6vh)
+        scale(0.15)
+        rotate(8.17deg);
+
+    transform-origin: center center;
+}
+
+
+/* ==================================================
+   STICKER PACK
+================================================== */
+
+.sticker-pack {
+    position: absolute;
+
+    width: auto;
+    height: auto;
+
+    top: 0;
+    left: 0;
+
+    transform: translate(-5%, -50%);
+
+    z-index: 1;
+
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+/* ==================================================
+   FIXED STICKERS
+================================================== */
+
+.fixed-sticker {
+    position: absolute;
+
+    width: auto;
+    height: auto;
+
+    z-index: 5;
+
+    pointer-events: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+
+
+    
+    
+}
+
+.sticker-link {
+    display: contents;
+}
+
+
+
+////
+
+
+.fixed-sticker {
+    pointer-events: auto;
+    transition: transform 0.03s ease;
+}
+
+.fixed-sticker:hover {
+    transform: scale(1.08);
+}
+
+
+/* ==================================================
+   ABOUT
+================================================== */
+
+.about-sticker {
+    top: -115%;
+    left: 210%;
+
+    transform: rotate(0deg);
+}
+
+
+/* ==================================================
+   WORK
+================================================== */
+
+.work-sticker {
+    top: 55%;
+    right: -10%;
+
+    transform: rotate(5deg);
+}
+
+
+/* ==================================================
+   CONTACT
+================================================== */
+
+.contact-sticker {
+    bottom: -135%;
+    left: 185%;
+
+    transform: rotate(-2deg);
+}
+
+
+/* ==================================================
+   HOME
+================================================== */
+
+.home-sticker {
+    bottom: 29%;
+    right: -135%;
+
+    transform: rotate(6deg);
+}
+
+
+/* ==================================================
+   DRAGGABLE STICKERS
+================================================== */
+
+.draggable-sticker {
+    position: absolute;
+
+    width: auto;
+    height: auto;
+
+    z-index: 10;
+
+    cursor: grab;
+
+    user-select: none;
+    -webkit-user-drag: none;
+
+    touch-action: none;
+
+    will-change: transform;
+
+    --drag-x: 0px;
+    --drag-y: 0px;
+
+    transform:
+        translate3d(
+            var(--drag-x),
+            var(--drag-y),
+            0
+        )
+        rotate(var(--rotation));
+
+    transition: none;
+}
+
+.draggable-sticker:active {
+    cursor: grabbing;
+}
+
+
+/* ==================================================
+   INITIAL POSITIONS
+================================================== */
+
+
+/* APPLE */
+
+.sticker-1 {
+    top: -40%;
+    left: 76%;
+    --rotation: 0deg;
+}
+
+
+/* WING */
+
+.sticker-2 {
+    top: 35%;
+    left: 240%;
+    --rotation: 7deg;
+}
+
+
+/* STRAWBERRY */
+
+.sticker-3 {
+    top: -100%;
+    left: 110%;
+    --rotation: -1deg;
+}
+
+
+/* SMALL BROWN STAR */
+
+.sticker-4 {
+    top: -60%;
+    left: 50%;
+    --rotation: 10deg;
+}
+
+
+/* MUSIC NOTE */
+
+.sticker-5 {
+    top: -45%;
+    right: -107%;
+    --rotation: 0deg;
+}
+
+
+/* TAMAGOCHI */
+
+.sticker-6 {
+    top: -50%;
+    left: -22%;
+    --rotation: 0deg;
+}
+
+
+/* GREEN STAR */
+
+.sticker-7 {
+    bottom: 57%;
+    left: 260%;
+    --rotation: -8deg;
+}
+
+
+/* CAT */
+
+.sticker-8 {
+    bottom: -50%;
+    right: -120%;
+    --rotation: 6deg;
+}
+
+
+/* NICE TO MEET YOU */
+
+.sticker-9 {
+    bottom: 160%;
+    left: 0%;
+    --rotation: 0deg;
+}
+
+
+/* BIG BROWN STAR */
+
+.sticker-10 {
+    bottom: -130%;
+    right: 15%;
+    --rotation: 8deg;
+}
+
+
+/* SMALL WING */
+
+.sticker-11 {
+    bottom: -120%;
+    left: 100%;
+    --rotation: -3deg;
+}
+
+
+/* SMALL BLUE STAR */
+
+.sticker-12 {
+    bottom: -45%;
+    right: -229%;
+    --rotation: 10deg;
+}
+
+///////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================================================
+ 
+
+
+
+/* ==================================================
+   SMALL DESKTOP + TABLET
+   1200px ~ 601px
+
+   ⭐ Ticket = 왼쪽
+   ⭐ Sticker = 오른쪽 영역
+   ⭐ Sticker는 절대 오른쪽 끝에 붙지 않음
+   ⭐ 화면이 작아질수록 왼쪽으로
+================================================== */
+
+@media (max-width: 1200px) and (min-width: 601px) {
+
+    .ticket-area {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        gap: 0;
+
+        align-items: center;
+    }
+
+
+    /* ==================================================
+       TICKET
+    ================================================== */
+
+    .ticket {
+        width: 100%;
+        max-width: 400px;
+
+        justify-self: center;
+    }
+
+
+    /* ==================================================
+       RIGHT AREA
+    ================================================== */
+
+    .ticket-right {
+        width: 100%;
+
+        display: flex;
+
+        /*
+           ⭐⭐⭐ 핵심 ⭐⭐⭐
+           오른쪽 끝이 아니라
+           오른쪽 칸의 "왼쪽"에서 시작
+        */
+
+        justify-content: flex-start;
+        align-items: center;
+
+        overflow: visible;
+
+        padding-left: 0;
+    }
+
+
+    /* ==================================================
+       STICKER AREA
+    ================================================== */
+
+    .sticker-area {
+
+        width: 700px;
+        height: 700px;
+
+        /*
+           ⭐ 기존 auto 제거
+        */
+        margin: 0;
+
+        /*
+           ⭐⭐⭐ 핵심 ⭐⭐⭐
+           오른쪽 칸에서 왼쪽으로 확실하게
+        */
+
+        transform:
+            translateX(-35%)
+            scale(0.14)
+            rotate(8.17deg);
+
+        transform-origin: center center;
+    }
+
+}
+
+
+/* ==================================================
+   1100px 이하
+   ⭐ 더 왼쪽
+================================================== */
+
+@media (max-width: 1100px) and (min-width: 601px) {
+
+    .sticker-area {
+
+        transform:
+            translateX(-45%)
+            scale(0.13)
+            rotate(8.17deg);
+    }
+
+}
+
+
+/* ==================================================
+ /* ==================================================
+   1000px 이하
+   ⭐ 기존보다 조금 오른쪽
+   ⭐ Ticket과 겹치지 않게
+================================================== */
+
+@media (max-width: 1000px) and (min-width: 601px) {
+
+    .sticker-area {
+
+        transform:
+            translateX(-48%)
+            scale(0.12)
+            rotate(8.17deg);
+    }
+
+}
+
+
+/* ==================================================
+   900px 이하 ~ 851px
+   ⭐ 너무 왼쪽으로 가지 않게
+================================================== */
+
+@media (max-width: 900px) and (min-width: 851px) {
+
+    .sticker-area {
+        transform:
+            translateX(-35%)
+            scale(0.11)
+            rotate(8.17deg);
+    }
+
+}
+
+
+/* ==================================================
+   850px 이하 ~ 601px
+================================================== */
+
+@media (max-width: 850px) and (min-width: 601px) {
+
+    .sticker-area {
+        transform:
+            translateX(-38%)
+            scale(0.10)
+            rotate(8.17deg);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================================================
+   PHONE
+   600px 이하
+
+   ⭐ Ticket 위
+   ⭐ Sticker 아래
+   ⭐ 전체적으로 위쪽 배치
+================================================== */
+
+@media (max-width: 600px) {
+
+    /* ==================================================
+       HOME
+    ================================================== */
+
+    .home {
+        height: auto;
+        min-height: calc(100vh - 60px);
+        overflow: visible;
+    }
+
+
+    /* ==================================================
+       TICKET AREA
+    ================================================== */
+
+    .ticket-area {
+
+        width: 100%;
+        height: auto;
+        min-height: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        /* ⭐ 기존 18vh → 훨씬 작게 */
+        gap: 26vh;
+
+        /* ⭐ 전체 시작 위치도 조금 위로 */
+        padding-top: 4vh;
+        padding-bottom: 8vh;
+        
+    }
+
+
+    /* ==================================================
+       TICKET
+    ================================================== */
+
+    .ticket {
+
+        width: 80%;
+        max-width: 290px;
+
+        flex-shrink: 0;
+    }
+
+
+    /* ==================================================
+       RIGHT TICKET
+    ================================================== */
+
+    .ticket-right {
+
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: flex-start;
+
+        overflow: visible;
+
+        /* ⭐ Sticker 영역 자체도 위로 */
+        margin-top: -2vh;
+        transform: translateX(-10vw);
+    }
+
+
+    /* ==================================================
+       STICKER AREA
+    ================================================== */
+
+    .sticker-area {
+
+        width: 700px;
+        height: 700px;
+
+        margin: 0;
+
+        transform:
+        translateX(-5vw)
+            scale(0.090)
+            rotate(8.17deg);
+
+        transform-origin: top center;
+
+        overflow: visible;
+
+        flex-shrink: 0;
+        
+    }
+
+}

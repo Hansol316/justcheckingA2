@@ -1,0 +1,2301 @@
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+
+/* ==================================================
+   NAVIGATION BAR
+================================================== */
+
+.navbar {
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 25px;
+    padding-right: 45px;
+
+    position: relative;
+    z-index: 100;
+
+    background-image: url("images/bar.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+/* ==================================================
+   LOGO
+================================================== */
+
+.logo-link {
+    display: block;
+    flex-shrink: 0;
+}
+
+.logo {
+    display: block;
+
+    width: 77px;
+    height: auto;
+}
+
+
+
+/* ==================================================
+   NAVIGATION LINKS
+================================================== */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+    margin-left: 35px;
+}
+
+.nav-links a {
+    display: block;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.nav-links img {
+    display: block;
+
+    width: auto;
+    height: 20px;
+}
+
+.nav-links a:hover {
+    transform: translateY(-2px);
+    opacity: 0.75;
+}
+
+
+
+/* ==================================================
+   WORK AREA
+================================================== */
+
+.work {
+    width: 100%;
+    height: calc(100vh - 70px);
+
+    position: relative;
+
+    background-image: url("images/yellowbackground.png");
+    background-size: 1440px auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+
+
+/* ==================================================
+   WORK STACK
+================================================== */
+
+/*
+   IMPORTANT
+
+   Work 1~5 전체를 하나의 그룹으로 만들고
+   그 그룹 자체를 화면 중앙에 배치.
+
+   브라우저 크기가 바뀌어도
+   그룹의 중심은 계속 화면 중앙.
+*/
+
+.work-stack {
+    position: absolute;
+
+    width: 990px;
+    height: 100%;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+
+/* ==================================================
+   WORK CARD
+================================================== */
+
+.work-card {
+    position: absolute;
+
+    top: 50%;
+
+    width: 270px;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    transform: translateY(-50%);
+
+    transform-origin: center center;
+
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+
+    user-select: none;
+}
+
+
+
+/* ==================================================
+   WORK IMAGE
+================================================== */
+
+.work-card img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+
+
+/* ==================================================
+   WORK POSITIONS
+================================================== */
+
+/*
+   270px 카드
+   180px 간격
+   = 약 90px overlap
+*/
+
+
+/* WORK 1 */
+
+.work1 {
+    left: 0;
+
+    z-index: 5;
+
+    animation:
+        work1Enter 0.7s ease forwards;
+
+    animation-delay: 0.48s;
+}
+
+
+
+/* WORK 2 */
+
+.work2 {
+    left: 180px;
+
+    z-index: 4;
+
+    animation:
+        work2Enter 0.7s ease forwards;
+
+    animation-delay: 0.36s;
+}
+
+
+
+/* WORK 3 */
+
+.work3 {
+    left: 360px;
+
+    z-index: 3;
+
+    animation:
+        work3Enter 0.7s ease forwards;
+
+    animation-delay: 0.24s;
+}
+
+
+
+/* WORK 4 */
+
+.work4 {
+    left: 540px;
+
+    z-index: 2;
+
+    animation:
+        work4Enter 0.7s ease forwards;
+
+    animation-delay: 0.12s;
+}
+
+
+
+/* WORK 5 */
+
+.work5 {
+    left: 720px;
+
+    z-index: 1;
+
+    animation:
+        work5Enter 0.7s ease forwards;
+
+    animation-delay: 0s;
+}
+
+
+
+/* ==================================================
+   ENTRANCE ANIMATION
+================================================== */
+
+/*
+   오른쪽 → 왼쪽
+
+   5 → 4 → 3 → 2 → 1
+*/
+
+
+/* WORK 5 */
+
+@keyframes work5Enter {
+
+    from {
+        opacity: 0;
+        left: 1020px;
+    }
+
+    to {
+        opacity: 1;
+        left: 720px;
+    }
+}
+
+
+
+/* WORK 4 */
+
+@keyframes work4Enter {
+
+    from {
+        opacity: 0;
+        left: 840px;
+    }
+
+    to {
+        opacity: 1;
+        left: 540px;
+    }
+}
+
+
+
+/* WORK 3 */
+
+@keyframes work3Enter {
+
+    from {
+        opacity: 0;
+        left: 660px;
+    }
+
+    to {
+        opacity: 1;
+        left: 360px;
+    }
+}
+
+
+
+/* WORK 2 */
+
+@keyframes work2Enter {
+
+    from {
+        opacity: 0;
+        left: 480px;
+    }
+
+    to {
+        opacity: 1;
+        left: 180px;
+    }
+}
+
+
+
+/* WORK 1 */
+
+@keyframes work1Enter {
+
+    from {
+        opacity: 0;
+        left: 300px;
+    }
+
+    to {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+
+
+/* ==================================================
+   NORMAL HOVER
+================================================== */
+
+.work-card:hover {
+
+    z-index: 999 !important;
+
+    transform:
+        translateY(calc(-50% - 20px))
+        scale(1.10);
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            rgba(255, 255, 255, 1)
+        )
+        drop-shadow(
+            0 0 15px
+            rgba(255, 255, 255, 0.8)
+        )
+        drop-shadow(
+            0 0 30px
+            rgba(255, 255, 255, 0.5)
+        );
+}
+
+
+
+/* ==================================================
+   WORK 3 HOVER LAYER
+================================================== */
+
+/*
+   Hover:
+
+   3
+   2
+   1
+   4
+   5
+*/
+
+.work-stack:has(.work3:hover) .work1 {
+    z-index: 2;
+}
+
+.work-stack:has(.work3:hover) .work2 {
+    z-index: 3;
+}
+
+.work-stack:has(.work3:hover) .work3 {
+    z-index: 999;
+}
+
+.work-stack:has(.work3:hover) .work4 {
+    z-index: 1;
+}
+
+.work-stack:has(.work3:hover) .work5 {
+    z-index: 0;
+}
+
+
+
+/* ==================================================
+   WORK 4 HOVER LAYER
+================================================== */
+
+/*
+   Hover:
+
+   4
+   3
+   2
+   1
+   5
+*/
+
+.work-stack:has(.work4:hover) .work1 {
+    z-index: 1;
+}
+
+.work-stack:has(.work4:hover) .work2 {
+    z-index: 2;
+}
+
+.work-stack:has(.work4:hover) .work3 {
+    z-index: 3;
+}
+
+.work-stack:has(.work4:hover) .work4 {
+    z-index: 999;
+}
+
+.work-stack:has(.work4:hover) .work5 {
+    z-index: 0;
+}
+
+
+
+/* ==================================================
+   WORK 5 HOVER LAYER
+================================================== */
+
+/*
+   Hover:
+
+   5
+   4
+   3
+   2
+   1
+*/
+
+.work-stack:has(.work5:hover) .work1 {
+    z-index: 1;
+}
+
+.work-stack:has(.work5:hover) .work2 {
+    z-index: 2;
+}
+
+.work-stack:has(.work5:hover) .work3 {
+    z-index: 3;
+}
+
+.work-stack:has(.work5:hover) .work4 {
+    z-index: 4;
+}
+
+.work-stack:has(.work5:hover) .work5 {
+    z-index: 999;
+}
+
+
+
+/* ==================================================
+   DETAIL OVERLAY
+================================================== */
+
+.detail-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index: 1000;
+}
+
+
+
+/* ==================================================
+   DETAIL ACTIVE
+================================================== */
+
+.detail-overlay.active {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+
+/* ==================================================
+   DETAIL CONTENT
+================================================== */
+
+.detail-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+
+/* ==================================================
+   DETAIL IMAGE
+================================================== */
+
+.detail-image {
+
+    display: block;
+
+    max-width: 80vw;
+    max-height: 75vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    transform: scale(0.9);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.detail-overlay.active .detail-image {
+
+    transform: scale(1);
+}
+
+
+
+/* ==================================================
+   PROJECT LINK
+================================================== */
+
+.detail-link {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 150px;
+
+    height: 42px;
+
+    padding: 0 25px;
+
+    background: white;
+
+    color: black;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.detail-link:hover {
+
+    transform:
+        translateY(-3px);
+
+    opacity: 0.75;
+}
+
+
+
+/* ==================================================
+   CLOSE BUTTON
+================================================== */
+
+.close-button {
+
+    position: absolute;
+
+    top: 25px;
+    right: 35px;
+
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    font-size: 45px;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 1002;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.close-button:hover {
+
+    transform: scale(1.15);
+
+    opacity: 0.7;
+}
+
+
+
+/* ==================================================
+   DETAIL ARROWS
+================================================== */
+
+/*
+   HTML에 ← →가 남아 있어도
+   font-size: 0으로 숨김.
+
+   실제 화살표는 CSS로 만듦.
+*/
+
+.detail-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+
+    background: none;
+
+    cursor: pointer;
+
+    z-index: 1002;
+
+    font-size: 0;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+
+/* ==================================================
+   ARROW SHAPE
+================================================== */
+
+.detail-arrow::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 24px;
+    height: 24px;
+
+    border-top: 5px solid white;
+
+    border-right: 5px solid white;
+}
+
+
+
+/* ==================================================
+   LEFT ARROW
+================================================== */
+
+.left-arrow {
+
+    left: 30px;
+
+    transform:
+        translateY(-50%);
+}
+
+
+.left-arrow::before {
+
+    left: 16px;
+
+    transform:
+        translateY(-50%)
+        rotate(-135deg);
+}
+
+
+
+/* ==================================================
+   RIGHT ARROW
+================================================== */
+
+.right-arrow {
+
+    right: 30px;
+
+    transform:
+        translateY(-50%);
+}
+
+
+.right-arrow::before {
+
+    right: 16px;
+
+    transform:
+        translateY(-50%)
+        rotate(45deg);
+}
+
+
+
+/* ==================================================
+   ARROW HOVER
+================================================== */
+
+.left-arrow:hover {
+
+    transform:
+        translateY(-50%)
+        scale(1.15);
+
+    opacity: 0.8;
+}
+
+
+.right-arrow:hover {
+
+    transform:
+        translateY(-50%)
+        scale(1.15);
+
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================================================
+   RESPONSIVE WORK
+   1000px 이하
+================================================== */
+
+@media screen and (max-width: 1000px) {
+
+    /* ==========================================
+       WORK AREA
+    ========================================== */
+
+    .work {
+        width: 100%;
+        height: calc(100vh - 70px);
+
+        position: relative;
+
+        overflow: hidden;
+    }
+
+
+    .work-stack {
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+
+        left: 0;
+        top: 0;
+
+        transform: none;
+    }
+
+
+    /* ==========================================
+       WORK CARD
+       → 하나만 표시
+    ========================================== */
+
+    .work-card {
+
+        position: absolute !important;
+
+        left: 50% !important;
+        top: 50% !important;
+
+        width: 40vw;
+
+        max-width: 360px;
+        min-width: 160px;
+
+        margin: 0 !important;
+
+        opacity: 0 !important;
+
+        visibility: hidden !important;
+
+        pointer-events: none !important;
+
+        animation: none !important;
+
+        z-index: 1 !important;
+
+        transform:
+            translate(-50%, -50%) !important;
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            filter 0.3s ease;
+    }
+
+
+    /* 현재 Work */
+
+    .work-card.mobile-active {
+
+        opacity: 1 !important;
+
+        visibility: visible !important;
+
+        pointer-events: auto !important;
+
+        z-index: 100 !important;
+
+        transform:
+            translate(-50%, -50%) !important;
+    }
+
+
+    /* ==========================================
+       WORK HOVER
+    ========================================== */
+
+    .work-card.mobile-active:hover {
+
+        transform:
+            translate(
+                -50%,
+                calc(-50% - 12px)
+            )
+            scale(1.05) !important;
+
+        filter:
+            drop-shadow(0 0 7px white)
+            drop-shadow(
+                0 0 18px
+                rgba(255,255,255,0.7)
+            );
+    }
+
+
+    /* ==========================================
+       WORK ARROWS
+    ========================================== */
+
+    .responsive-work-arrow {
+
+        position: fixed;
+
+        top: 50%;
+
+        width: 60px;
+        height: 60px;
+
+        padding: 0;
+
+        border: none;
+
+        background: transparent;
+
+        cursor: pointer;
+
+        z-index: 9999;
+
+        display: block;
+
+        transform:
+            translateY(-50%);
+    }
+
+
+    .responsive-work-arrow::before {
+
+        content: "";
+
+        position: absolute;
+
+        top: 50%;
+
+        width: 22px;
+        height: 22px;
+
+        border-top:
+            5px solid #5A4035;
+
+        border-right:
+            5px solid #5A4035;
+    }
+
+
+    /* LEFT */
+
+    .responsive-work-prev {
+
+        left: 20px;
+    }
+
+
+    .responsive-work-prev::before {
+
+        left: 18px;
+
+        transform:
+            translateY(-50%)
+            rotate(-135deg);
+    }
+
+
+    /* RIGHT */
+
+    .responsive-work-next {
+
+        right: 20px;
+    }
+
+
+    .responsive-work-next::before {
+
+        right: 18px;
+
+        transform:
+            translateY(-50%)
+            rotate(45deg);
+    }
+
+
+    .responsive-work-arrow:hover {
+
+        opacity: 0.65;
+    }
+
+
+    /* ==========================================
+       DETAIL OPEN
+       → Work 갈색 화살표 숨김
+    ========================================== */
+
+    .detail-overlay.active
+    ~ .responsive-work-arrow {
+
+        display: none !important;
+    }
+
+}
+
+
+/* ==================================================
+   768px 이하
+================================================== */
+
+@media screen and (max-width: 768px) {
+
+    .work {
+
+        height:
+            calc(100vh - 60px);
+    }
+
+
+    .work-card {
+
+        width: 50vw;
+
+        max-width: 300px;
+        min-width: 150px;
+    }
+
+
+    .responsive-work-arrow {
+
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .responsive-work-arrow::before {
+
+        width: 19px;
+        height: 19px;
+
+        border-top-width: 4px;
+        border-right-width: 4px;
+    }
+
+
+    .responsive-work-prev {
+
+        left: 8px;
+    }
+
+
+    .responsive-work-prev::before {
+
+        left: 14px;
+    }
+
+
+    .responsive-work-next {
+
+        right: 8px;
+    }
+
+
+    .responsive-work-next::before {
+
+        right: 14px;
+    }
+
+}
+
+
+/* ==================================================
+   480px 이하
+================================================== */
+
+@media screen and (max-width: 480px) {
+
+    .work-card {
+
+        width: 58vw;
+
+        max-width: 250px;
+        min-width: 130px;
+    }
+
+
+    .responsive-work-arrow {
+
+        width: 45px;
+        height: 45px;
+    }
+
+
+    .responsive-work-arrow::before {
+
+        width: 17px;
+        height: 17px;
+
+        border-top-width: 4px;
+        border-right-width: 4px;
+    }
+
+
+    .responsive-work-prev {
+
+        left: 2px;
+    }
+
+
+    .responsive-work-prev::before {
+
+        left: 11px;
+    }
+
+
+    .responsive-work-next {
+
+        right: 2px;
+    }
+
+
+    .responsive-work-next::before {
+
+        right: 11px;
+    }
+
+}
+
+
+/* ==================================================
+   DETAIL ARROWS
+   450px 이하
+================================================== */
+
+@media screen and (max-width: 450px) {
+
+    /* ==========================================
+       DETAIL IMAGE
+    ========================================== */
+
+    .detail-image {
+
+        max-width: 65vw !important;
+
+        max-height: 72vh !important;
+    }
+
+
+    /* ==========================================
+       LEFT DETAIL ARROW
+    ========================================== */
+
+    .detail-overlay .left-arrow {
+
+        position: fixed !important;
+
+        top: 50% !important;
+
+        left: 12px !important;
+        right: auto !important;
+
+        width: 45px !important;
+        height: 55px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        transform:
+            translateY(-50%) !important;
+
+        z-index: 10000 !important;
+    }
+
+
+    .detail-overlay .left-arrow::before {
+
+        left: 2px !important;
+        right: auto !important;
+
+        width: 20px !important;
+        height: 20px !important;
+
+        transform:
+            translateY(-50%)
+            rotate(-135deg) !important;
+    }
+
+
+    /* ==========================================
+       RIGHT DETAIL ARROW
+    ========================================== */
+
+    .detail-overlay .right-arrow {
+
+        position: fixed !important;
+
+        top: 50% !important;
+
+        right: 12px !important;
+        left: auto !important;
+
+        width: 45px !important;
+        height: 55px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        transform:
+            translateY(-50%) !important;
+
+        z-index: 10000 !important;
+    }
+
+
+    .detail-overlay .right-arrow::before {
+
+        right: 2px !important;
+        left: auto !important;
+
+        width: 20px !important;
+        height: 20px !important;
+
+        transform:
+            translateY(-50%)
+            rotate(45deg) !important;
+    }
+
+}
+
+
+
+
+///////////
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    .nav-links {
+        gap: 25px;
+        margin-left: 35px;
+    }
+
+    .nav-links img {
+        height: 20px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .nav-links {
+        gap: 18px;
+        margin-left: 25px;
+    }
+
+    .nav-links img {
+        height: 20px;
+    }
+
+}
+
+
+
+
+/* ==================================================
+   VERY SMALL MOBILE
+   355px 이하
+================================================== */
+
+@media screen and (max-width: 355px) {
+
+    .navbar {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        margin-left: 12px;
+    }
+
+    /* About / Work / Contact 크기는 유지 */
+    .nav-links img {
+        height: 20px;
+        width: auto;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+//////
+
+
+
+
+/* ==================================================
+   RESPONSIVE WORK
+   1000px 이하
+================================================== */
+
+@media screen and (max-width: 1000px) {
+
+    .work {
+        width: 100%;
+        height: calc(100vh - 70px);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .work-stack {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transform: none;
+    }
+
+
+    /* WORK 하나만 표시 */
+
+    .work-card {
+        position: absolute !important;
+
+        left: 50% !important;
+        top: 50% !important;
+
+        width: 40vw;
+        max-width: 360px;
+        min-width: 160px;
+
+        margin: 0 !important;
+
+        opacity: 0 !important;
+        visibility: hidden !important;
+
+        pointer-events: none !important;
+
+        animation: none !important;
+
+        z-index: 1 !important;
+
+        transform:
+            translate(-50%, -50%) !important;
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            filter 0.3s ease;
+    }
+
+
+    .work-card.mobile-active {
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        pointer-events: auto !important;
+
+        z-index: 100 !important;
+
+        transform:
+            translate(-50%, -50%) !important;
+    }
+
+
+    /* Hover */
+
+    .work-card.mobile-active:hover {
+
+        transform:
+            translate(
+                -50%,
+                calc(-50% - 12px)
+            )
+            scale(1.05) !important;
+
+        filter:
+            drop-shadow(0 0 7px white)
+            drop-shadow(
+                0 0 18px
+                rgba(255,255,255,0.7)
+            );
+    }
+
+
+    /* ==================================================
+       MOBILE WORK ARROWS
+    ================================================== */
+
+    .responsive-work-arrow {
+
+        position: fixed;
+
+        top: 50%;
+
+        width: 60px;
+        height: 60px;
+
+        padding: 0;
+
+        border: none;
+
+        background: transparent;
+
+        cursor: pointer;
+
+        z-index: 9999;
+
+        display: block;
+
+        transform:
+            translateY(-50%);
+    }
+
+
+    .responsive-work-arrow::before {
+
+        content: "";
+
+        position: absolute;
+
+        top: 50%;
+
+        width: 22px;
+        height: 22px;
+
+        border-top:
+            5px solid #5A4035;
+
+        border-right:
+            5px solid #5A4035;
+    }
+
+
+    .responsive-work-prev {
+        left: 20px;
+    }
+
+
+    .responsive-work-prev::before {
+
+        left: 18px;
+
+        transform:
+            translateY(-50%)
+            rotate(-135deg);
+    }
+
+
+    .responsive-work-next {
+        right: 20px;
+    }
+
+
+    .responsive-work-next::before {
+
+        right: 18px;
+
+        transform:
+            translateY(-50%)
+            rotate(45deg);
+    }
+
+
+    .responsive-work-arrow:hover {
+        opacity: 0.65;
+    }
+
+}
+
+
+/* ==================================================
+   768px 이하
+================================================== */
+
+@media screen and (max-width: 768px) {
+
+    .work {
+        height:
+            calc(100vh - 60px);
+    }
+
+
+    .work-card {
+        width: 50vw;
+        max-width: 300px;
+        min-width: 150px;
+    }
+
+
+    .responsive-work-arrow {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .responsive-work-arrow::before {
+
+        width: 19px;
+        height: 19px;
+
+        border-top-width: 4px;
+        border-right-width: 4px;
+    }
+
+
+    .responsive-work-prev {
+        left: 8px;
+    }
+
+
+    .responsive-work-prev::before {
+        left: 14px;
+    }
+
+
+    .responsive-work-next {
+        right: 8px;
+    }
+
+
+    .responsive-work-next::before {
+        right: 14px;
+    }
+
+}
+
+
+/* ==================================================
+   480px 이하
+================================================== */
+
+@media screen and (max-width: 480px) {
+
+    .work-card {
+
+        width: 58vw;
+
+        max-width: 250px;
+        min-width: 130px;
+    }
+
+
+    .responsive-work-arrow {
+
+        width: 45px;
+        height: 45px;
+    }
+
+
+    .responsive-work-arrow::before {
+
+        width: 17px;
+        height: 17px;
+
+        border-top-width: 4px;
+        border-right-width: 4px;
+    }
+
+
+    .responsive-work-prev {
+        left: 2px;
+    }
+
+
+    .responsive-work-prev::before {
+        left: 11px;
+    }
+
+
+    .responsive-work-next {
+        right: 2px;
+    }
+
+
+    .responsive-work-next::before {
+        right: 11px;
+    }
+
+}
+
+
+/* ==================================================
+   DETAIL ARROWS
+   450px 이하
+================================================== */
+
+@media screen and (max-width: 450px) {
+
+    .detail-image {
+
+        max-width: 65vw !important;
+        max-height: 72vh !important;
+    }
+
+
+    .detail-overlay .left-arrow {
+
+        position: fixed !important;
+
+        top: 50% !important;
+
+        left: 12px !important;
+        right: auto !important;
+
+        width: 45px !important;
+        height: 55px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        transform:
+            translateY(-50%) !important;
+
+        z-index: 10000 !important;
+    }
+
+
+    .detail-overlay .left-arrow::before {
+
+        left: 2px !important;
+        right: auto !important;
+
+        width: 20px !important;
+        height: 20px !important;
+
+        transform:
+            translateY(-50%)
+            rotate(-135deg) !important;
+    }
+
+
+    .detail-overlay .right-arrow {
+
+        position: fixed !important;
+
+        top: 50% !important;
+
+        right: 12px !important;
+        left: auto !important;
+
+        width: 45px !important;
+        height: 55px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        transform:
+            translateY(-50%) !important;
+
+        z-index: 10000 !important;
+    }
+
+
+    .detail-overlay .right-arrow::before {
+
+        right: 2px !important;
+        left: auto !important;
+
+        width: 20px !important;
+        height: 20px !important;
+
+        transform:
+            translateY(-50%)
+            rotate(45deg) !important;
+    }
+
+}
+
+
+/* ==================================================
+   NAVBAR RESPONSIVE
+================================================== */
+
+@media screen and (max-width: 768px) {
+
+    .navbar {
+
+        height: 60px;
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .logo {
+        width: 65px;
+    }
+
+
+    .nav-links {
+
+        gap: 25px;
+
+        margin-left: 35px;
+
+        flex-shrink: 0;
+    }
+
+
+    .nav-links img {
+
+        height: 20px;
+        width: auto;
+    }
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .navbar {
+
+        height: 55px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .logo {
+        width: 55px;
+    }
+
+
+    .nav-links {
+
+        gap: 18px;
+
+        margin-left: 25px;
+    }
+
+
+    .nav-links img {
+
+        height: 20px;
+        width: auto;
+    }
+
+}
+
+
+@media screen and (max-width: 380px) {
+
+    .navbar {
+
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+
+    .logo {
+        width: 50px;
+    }
+
+
+    .nav-links {
+
+        gap: 14px;
+
+        margin-left: 18px;
+    }
+
+
+    .nav-links img {
+        height: 20px;
+    }
+
+}
+
+
+@media screen and (max-width: 355px) {
+
+    .navbar {
+
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+
+    .logo {
+        width: 50px;
+    }
+
+
+    .nav-links {
+
+        gap: 10px;
+
+        margin-left: 12px;
+    }
+
+
+    .nav-links img {
+        height: 20px;
+    }
+
+}
+
+
+/* ==================================================
+   WORK 5
+   VIEW PROJECT IMAGE
+================================================== *//* ==================================================
+   WORK 5 VIEW PROJECT
+   IMAGE SLIDER
+================================================== */
+
+.view-project-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.82);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 20000;
+}
+
+
+.view-project-overlay.active {
+
+    display: flex;
+}
+
+
+/* ==================================================
+   IMAGE
+================================================== */
+
+.view-project-image {
+
+    max-width: 80vw;
+    max-height: 82vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* ==================================================
+   CLOSE
+================================================== */
+
+.view-project-close {
+
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 45px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 20002;
+}
+
+
+.view-project-close:hover {
+
+    transform: scale(1.1);
+}
+
+
+/* ==================================================
+   VIEW PROJECT ARROWS
+================================================== */
+
+.view-project-arrow {
+
+    position: fixed;
+
+    top: 50%;
+
+    width: 60px;
+    height: 70px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 20002;
+
+    transform:
+        translateY(-50%);
+}
+
+
+/* LEFT */
+
+.view-project-prev {
+
+    left: 25px;
+}
+
+
+/* RIGHT */
+
+.view-project-next {
+
+    right: 25px;
+}
+
+
+/* ==================================================
+   ARROW SHAPE
+================================================== */
+
+.view-project-arrow::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 22px;
+    height: 22px;
+
+    border-top:
+        5px solid white;
+
+    border-right:
+        5px solid white;
+}
+
+
+.view-project-prev::before {
+
+    left: 18px;
+
+    transform:
+        translateY(-50%)
+        rotate(-135deg);
+}
+
+
+.view-project-next::before {
+
+    right: 18px;
+
+    transform:
+        translateY(-50%)
+        rotate(45deg);
+}
+
+
+.view-project-arrow:hover {
+
+    opacity: 0.65;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media screen and (max-width: 600px) {
+
+    .view-project-image {
+
+        max-width: 72vw;
+        max-height: 75vh;
+    }
+
+
+    .view-project-prev {
+
+        left: 8px;
+    }
+
+
+    .view-project-next {
+
+        right: 8px;
+    }
+
+
+    .view-project-arrow {
+
+        width: 45px;
+        height: 55px;
+    }
+
+
+    .view-project-prev::before {
+
+        left: 10px;
+
+        width: 18px;
+        height: 18px;
+
+        border-top-width: 4px;
+        border-right-width: 4px;
+    }
+
+
+    .view-project-next::before {
+
+        right: 10px;
+
+        width: 18px;
+        height: 18px;
+
+        border-top-width: 4px;
+        border-right-width: 4px;
+    }
+
+}
+
+
+
+
+
+
+
+
+////
+
+
+
+/* ==========================================
+   VIEW PROJECT ARROWS
+========================================== */
+
+.view-project-arrow {
+    position: fixed;
+
+    top: 50%;
+
+    width: 60px;
+    height: 60px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: transparent;
+
+    font-size: 0;
+
+    cursor: pointer;
+
+    z-index: 30000;
+
+    transform: translateY(-50%);
+}
+
+
+/* 화살표 모양은 CSS로만 생성 */
+
+.view-project-arrow::before {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 20px;
+    height: 20px;
+
+    border-top: 4px solid white;
+    border-right: 4px solid white;
+
+    transform-origin: center;
+}
+
+
+/* LEFT */
+
+.view-project-prev {
+    left: 30px;
+}
+
+.view-project-prev::before {
+    transform:
+        translate(-50%, -50%)
+        rotate(-135deg);
+}
+
+
+/* RIGHT */
+
+.view-project-next {
+    right: 30px;
+}
+
+.view-project-next::before {
+    transform:
+        translate(-50%, -50%)
+        rotate(45deg);
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* ==========================================
+   VIEW PROJECT ARROWS
+========================================== */
+
+.view-project-arrow {
+    position: fixed;
+
+    top: 50%;
+
+    width: 60px;
+    height: 60px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: transparent;
+
+    font-size: 0;
+
+    cursor: pointer;
+
+    z-index: 30000;
+
+    transform: translateY(-50%);
+}
+
+
+/* 화살표 모양은 CSS로만 생성 */
+
+.view-project-arrow::before {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 20px;
+    height: 20px;
+
+    border-top: 4px solid white;
+    border-right: 4px solid white;
+
+    transform-origin: center;
+}
+
+
+/* LEFT */
+
+.view-project-prev {
+    left: 30px;
+}
+
+.view-project-prev::before {
+    transform:
+        translate(-50%, -50%)
+        rotate(-135deg);
+}
+
+
+/* RIGHT */
+
+.view-project-next {
+    right: 30px;
+}
+
+.view-project-next::before {
+    transform:
+        translate(-50%, -50%)
+        rotate(45deg);
+}

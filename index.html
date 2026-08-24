@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sol Portfolio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- =====================================
+         NAVIGATION
+    ====================================== -->
+
+    <header class="navbar">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo-link">
+            <img
+                src="images/logo.png"
+                alt="Sol"
+                class="logo"
+            >
+        </a>
+
+
+        <!-- Menu -->
+        <nav class="nav-links">
+
+            <a href="about.html">
+                <img
+                    src="images/About.png"
+                    alt="About"
+                >
+            </a>
+
+            <a href="work.html">
+                <img
+                    src="images/Work.png"
+                    alt="Work"
+                >
+            </a>
+
+            <a href="contact.html">
+                <img
+                    src="images/Contact.png"
+                    alt="Contact"
+                >
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================
+         HOME
+    ====================================== -->
+
+    <main class="home">
+
+        <section class="ticket-area">
+
+
+            <!-- =================================
+                 LEFT TICKET
+            ================================== -->
+
+            <div class="ticket ticket-left">
+
+                <!--
+                    1. 가장 아래
+                    원래 티켓
+                -->
+                <img
+                    src="images/ticket.png"
+                    alt="Portfolio ticket"
+                    class="ticket-base"
+                >
+
+
+                <!--
+                    2. 가운데
+                    회색 scratch layer
+
+                    JavaScript가 이 부분을 지움
+                -->
+                <canvas
+                    id="scratchCanvas"
+                    class="scratch-canvas"
+                ></canvas>
+
+
+                <!--
+                    3. 가장 위
+                    Sticker
+
+                    이 부분은 긁히지 않음
+                -->
+                <img
+                    src="images/ticketsticker.png"
+                    alt=""
+                    class="ticket-sticker"
+                >
+
+            </div>
+
+
+
+            <!-- =================================
+                 RIGHT TICKET
+            ================================== -->
+
+            <div class="ticket ticket-right">
+                <section class="sticker-area">
+
+    <!-- Sticker Pack : 가장 밑 -->
+    <img
+        src="images/stickerpack.png"
+        class="sticker-pack"
+        alt="Sticker Pack"
+    >
+
+
+    <!-- =========================================
+         FIXED STICKERS
+         드래그 불가능
+    ========================================== -->
+    
+    <!-- ABOUT -->
+<a href="about.html" class="sticker-link">
+    <img
+        src="images/aboutme.png"
+        class="fixed-sticker about-sticker"
+        alt="About Me"
+    >
+</a>
+
+
+<!-- WORK -->
+<a href="work.html" class="sticker-link">
+    <img
+        src="images/workfile.png"
+        class="fixed-sticker work-sticker"
+        alt="Work"
+    >
+</a>
+
+
+<!-- CONTACT -->
+<a href="contact.html" class="sticker-link">
+    <img
+        src="images/contactme.png"
+        class="fixed-sticker contact-sticker"
+        alt="Contact Me"
+    >
+</a>
+
+
+<!-- HOME -->
+<a href="index.html" class="sticker-link">
+    <img
+        src="images/home.png"
+        class="fixed-sticker home-sticker"
+        alt="Home"
+    >
+</a>
+
+
+    <!-- =========================================
+         DRAGGABLE STICKERS
+         스티커처럼 떼어서 이동 가능
+    ========================================== -->
+
+    <img src="images/apple.png"
+         class="draggable-sticker sticker-1"
+         alt="">
+
+    <img src="images/wing.png"
+         class="draggable-sticker sticker-2"
+         alt="">
+
+    <img src="images/strawberry.png"
+         class="draggable-sticker sticker-3"
+         alt="">
+
+    <img src="images/smallbrownstar.png"
+         class="draggable-sticker sticker-4"
+         alt="">
+
+    <img src="images/musicnote.png"
+         class="draggable-sticker sticker-5"
+         alt="">
+
+    <img src="images/tamagochi.png"
+         class="draggable-sticker sticker-6"
+         alt="">
+
+    <img src="images/greenstar.png"
+         class="draggable-sticker sticker-7"
+         alt="">
+
+    <img src="images/cat.png"
+         class="draggable-sticker sticker-8"
+         alt="">
+
+    <img src="images/nicetomeetyou.png"
+         class="draggable-sticker sticker-9"
+         alt="">
+
+    <img src="images/brownbigstar.png"
+         class="draggable-sticker sticker-10"
+         alt="">
+
+    <img src="images/smallwing.png"
+         class="draggable-sticker sticker-11"
+         alt="">
+
+    <img src="images/smallbluestar.png"
+         class="draggable-sticker sticker-12"
+         alt="">
+
+</section>
+
+            </div>
+            
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         CONTACT
+    ====================================== -->
+
+    <footer id="contact" class="contact">
+        <!-- 나중에 Contact -->
+    </footer>
+
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

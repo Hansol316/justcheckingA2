@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Work</title>
+
+    <link rel="stylesheet" href="work.style.css">
+</head>
+
+<body>
+
+    <!-- =====================================
+         NAVIGATION
+    ====================================== -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo-link">
+            <img
+                src="images/logo.png"
+                alt="Sol"
+                class="logo"
+            >
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="about.html">
+                <img
+                    src="images/About.png"
+                    alt="About"
+                >
+            </a>
+
+            <a href="work.html">
+                <img
+                    src="images/Work.png"
+                    alt="Work"
+                >
+            </a>
+
+            <a href="contact.html">
+                <img
+                    src="images/Contact.png"
+                    alt="Contact"
+                >
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================
+         WORK
+    ====================================== -->
+
+    <main class="work">
+
+        <div class="work-stack">
+
+            <!-- WORK 5 -->
+            <div
+                class="work-card work5"
+                data-work="5"
+                data-link="https://example.com/work5"
+            >
+                <img
+                    src="images/work5.png"
+                    alt="Work 5"
+                >
+            </div>
+
+
+            <!-- WORK 4 -->
+            <div
+                class="work-card work4"
+                data-work="4"
+                data-link="https://example.com/work4"
+            >
+                <img
+                    src="images/work4.png"
+                    alt="Work 4"
+                >
+            </div>
+
+
+            <!-- WORK 3 -->
+            <div
+                class="work-card work3"
+                data-work="3"
+                data-link="https://example.com/work3"
+            >
+                <img
+                    src="images/work3.png"
+                    alt="Work 3"
+                >
+            </div>
+
+
+            <!-- WORK 2 -->
+            <div
+                class="work-card work2"
+                data-work="2"
+                data-link="https://example.com/work2"
+            >
+                <img
+                    src="images/work2.png"
+                    alt="Work 2"
+                >
+            </div>
+
+
+            <!-- WORK 1 -->
+            <div
+                class="work-card work1"
+                data-work="1"
+                data-link="https://example.com/work1"
+            >
+                <img
+                    src="images/work1.png"
+                    alt="Work 1"
+                >
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         DETAIL OVERLAY
+    ====================================== -->
+
+    <div class="detail-overlay" id="detailOverlay">
+
+        <!-- X -->
+        <button
+            class="close-button"
+            id="closeButton"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+
+        <!-- LEFT -->
+        <button
+            class="detail-arrow left-arrow"
+            id="prevButton"
+            aria-label="Previous work"
+        >
+            ←
+        </button>
+
+
+        <!-- DETAIL CONTENT -->
+        <div class="detail-content">
+
+            <img
+                id="detailImage"
+                class="detail-image"
+                src=""
+                alt="Work detail"
+            >
+
+            <a
+                id="detailLink"
+                class="detail-link"
+                href="#"
+                target="_blank"
+            >
+                VIEW PROJECT
+            </a>
+
+        </div>
+
+
+        <!-- RIGHT -->
+        <button
+            class="detail-arrow right-arrow"
+            id="nextButton"
+            aria-label="Next work"
+        >
+            →
+        </button>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="work.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,785 @@
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+
+/* ==================================================
+   NAVIGATION BAR
+================================================== */
+
+.navbar {
+
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 25px;
+    padding-right: 45px;
+
+    position: relative;
+
+    z-index: 1000;
+
+    background-image:
+        url("images/bar.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+/* ==================================================
+   LOGO
+================================================== */
+
+.logo-link {
+    display: block;
+    flex-shrink: 0;
+}
+
+.logo {
+    display: block;
+
+    width: 77px;
+    height: auto;
+}
+
+
+
+/* ==================================================
+   NAVIGATION LINKS
+================================================== */
+
+.nav-links {
+
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+    margin-left: 35px;
+}
+
+.nav-links a {
+
+    display: block;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.nav-links img {
+
+    display: block;
+
+    width: auto;
+    height: 20px;
+}
+
+.nav-links a:hover {
+
+    transform:
+        translateY(-2px);
+
+    opacity: 0.75;
+}
+
+
+
+/* ==================================================
+   ABOUT PAGE
+================================================== */
+
+.about {
+
+    width: 100%;
+
+    min-height:
+        calc(100vh - 70px);
+
+    position: relative;
+
+    overflow: hidden;
+
+    background-image:
+        url("images/yellowbackground.png");
+
+    background-size: cover;
+
+    background-position:
+        center top;
+
+    background-repeat: no-repeat;
+
+    /*
+       ABOUT STAGE를
+       화면 중앙에 배치
+    */
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* ==================================================
+   ABOUT STAGE
+================================================== */
+
+.about-stage {
+
+    width: 1440px;
+    height: 900px;
+
+    position: relative;
+
+    /*
+       flex 중앙정렬을 사용하므로
+       auto margin은 사용하지 않음
+    */
+
+    margin: 0;
+
+    flex-shrink: 0;
+
+    overflow: visible;
+}
+
+
+
+/* ==================================================
+   ALL ABOUT ELEMENTS
+================================================== */
+
+.about-elements {
+
+    width: 1440px;
+    height: 900px;
+
+    position: absolute;
+
+    left: 0;
+
+    /*
+       기존 -30% 제거
+       stage의 중앙 기준을 유지
+    */
+
+    top: -30%;
+
+    transform-origin:
+        center center;
+
+    z-index: 10;
+
+    /*
+       ABOUT PAGE POP-IN
+    */
+
+    animation:
+        aboutPopIn
+        1.2s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+}
+
+
+
+/* ==================================================
+   ABOUT PAGE POP-IN
+================================================== */
+
+@keyframes aboutPopIn {
+
+    0% {
+
+        transform:
+            scale(0.01);
+
+        opacity: 0;
+    }
+
+    70% {
+
+        transform:
+            scale(0.22);
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            scale(0.20);
+
+        opacity: 1;
+    }
+}
+
+
+
+/* ==================================================
+   MAIN ABOUT BACKGROUND
+   LOWEST LAYER
+================================================== */
+
+.about-background {
+
+    position: absolute;
+
+    left: 50%;
+    top: 30px;
+
+    width: auto;
+    height: auto;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+
+/* ==================================================
+   COMMON INFORMATION ITEMS
+================================================== */
+
+.about-item {
+
+    position: absolute;
+
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    cursor: pointer;
+
+    transform-origin:
+        center center;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+
+    z-index: 20;
+}
+
+
+
+/* ==================================================
+   HOVER GLOW
+================================================== */
+
+.about-item:hover {
+
+    filter:
+        drop-shadow(
+            0 0 5px #ffffff
+        )
+
+        drop-shadow(
+            0 0 10px #ffffff
+        )
+
+        drop-shadow(
+            0 0 16px
+            rgba(255, 255, 255, 0.9)
+        );
+}
+
+
+
+/* ==================================================
+   NAME
+================================================== */
+
+.name-item {
+
+    left: 97%;
+    top: -14%;
+
+    transform:
+        translateX(-50%);
+}
+
+.name-item:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.06);
+}
+
+
+
+/* ==================================================
+   DATE OF BIRTH
+================================================== */
+
+.birth-item {
+
+    left: 60%;
+    top: 70%;
+
+    transform:
+        translateX(-50%);
+}
+
+.birth-item:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.06);
+}
+
+
+
+/* ==================================================
+   NATIONALITY
+================================================== */
+
+.nationality-item {
+
+    left: 36%;
+    top: 150%;
+
+    transform:
+        translateX(-50%);
+}
+
+.nationality-item:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.06);
+}
+
+
+
+/* ==================================================
+   MBTI
+================================================== */
+
+.mbti-item {
+
+    left: 7%;
+    top: 270%;
+
+    transform:
+        translateX(-50%);
+}
+
+.mbti-item:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.06);
+}
+
+
+
+/* ==================================================
+   SKILL SET
+================================================== */
+
+.skillset-item {
+
+    left: 117%;
+    top: 100%;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 25;
+}
+
+.skillset-item:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.06);
+}
+
+
+
+/* ==================================================
+   FAVOURITE SONG
+================================================== */
+
+.favsong-link {
+
+    position: absolute;
+
+    left: 60%;
+    top: 250%;
+
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    transform:
+        translateX(-50%);
+
+    transform-origin:
+        center center;
+
+    z-index: 30;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+.favsong {
+
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    cursor: pointer;
+}
+
+.favsong-link:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.06);
+
+    filter:
+        drop-shadow(
+            0 0 5px #ffffff
+        )
+
+        drop-shadow(
+            0 0 10px #ffffff
+        );
+}
+
+
+
+/* ==================================================
+   STAR
+================================================== */
+
+.about-star {
+
+    position: absolute;
+
+    left: 63%;
+    top: 265%;
+
+    margin-left: 280px;
+
+    width: auto;
+    height: auto;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    animation:
+        starFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+
+/* ==================================================
+   WING
+================================================== */
+
+.about-wing {
+
+    position: absolute;
+
+    left: 75%;
+    top: 40%;
+
+    margin-left: 280px;
+
+    width: auto;
+    height: auto;
+
+    z-index: 101;
+
+    pointer-events: none;
+
+    animation:
+        wingFloat
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+
+/* ==================================================
+   STAR ANIMATION
+================================================== */
+
+@keyframes starFloat {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px)
+            rotate(3deg);
+    }
+
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+}
+
+
+
+/* ==================================================
+   WING ANIMATION
+================================================== */
+
+@keyframes wingFloat {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(8px)
+            rotate(-3deg);
+    }
+
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+}
+
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media screen and (max-width: 768px) {
+
+    .navbar {
+
+        height: 60px;
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .logo {
+
+        width: 65px;
+    }
+
+    .nav-links {
+
+        gap: 25px;
+
+        margin-left: 35px;
+
+        flex-shrink: 0;
+    }
+
+    .nav-links img {
+
+        height: 20px;
+        width: auto;
+    }
+
+    .about {
+
+        min-height:
+            calc(100vh - 60px);
+    }
+
+    .about-stage {
+
+        transform:
+            scale(0.80);
+
+        transform-origin:
+            center center;
+    }
+}
+
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media screen and (max-width: 480px) {
+
+    .navbar {
+
+        height: 55px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .logo {
+
+        width: 55px;
+    }
+
+    .nav-links {
+
+        gap: 18px;
+
+        margin-left: 25px;
+    }
+
+    .nav-links img {
+
+        height: 20px;
+    }
+
+    .about {
+
+        min-height:
+            calc(100vh - 55px);
+    }
+
+    .about-stage {
+
+        transform:
+            scale(0.60);
+
+        transform-origin:
+            center center;
+    }
+}
+
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media screen and (max-width: 380px) {
+
+    .navbar {
+
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .logo {
+
+        width: 50px;
+    }
+
+    .nav-links {
+
+        gap: 14px;
+
+        margin-left: 18px;
+    }
+
+    .nav-links img {
+
+        height: 20px;
+    }
+
+    .about-stage {
+
+        transform:
+            scale(0.52);
+
+        transform-origin:
+            center center;
+    }
+}
+
+
+
+/* ==================================================
+   EXTRA SMALL
+================================================== */
+
+@media screen and (max-width: 355px) {
+
+    .navbar {
+
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .logo {
+
+        width: 50px;
+    }
+
+    .nav-links {
+
+        gap: 10px;
+
+        margin-left: 12px;
+    }
+
+    .nav-links img {
+
+        height: 20px;
+    }
+
+    .about-stage {
+
+        transform:
+            scale(0.46);
+
+        transform-origin:
+            center center;
+    }
+}

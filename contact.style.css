@@ -1,0 +1,987 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar {
+    width: 100%;
+    height: 5rem;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 3rem 0 2rem;
+
+    position: relative;
+    z-index: 1000;
+
+    background-image: url("images/bar.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-link {
+    display: block;
+    flex-shrink: 0;
+}
+
+.logo {
+    display: block;
+
+    width: 5rem;
+    height: auto;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 2.5rem;
+    margin-left: 2.5rem;
+}
+
+.nav-links a {
+    display: block;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.nav-links img {
+    display: block;
+
+    width: auto;
+    height: 1.5rem;
+}
+
+.nav-links a:hover {
+    transform: translateY(-0.15rem);
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
+.contact {
+    position: relative;
+
+    width: 100%;
+    height: calc(100vh - 5rem);
+
+    overflow: hidden;
+
+    background-image: url("images/yellowbackground.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   CONTACT LETTER AREA
+========================================================= */
+
+.contact-letter {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   LETTER
+   LAYER 1
+========================================================= */
+
+.letter {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 27rem;
+    height: auto;
+
+    z-index: 10;
+
+    transform: translate(-50%, -50%);
+
+    cursor: pointer;
+
+    user-select: none;
+    -webkit-user-drag: none;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        filter 0.3s ease;
+}
+
+
+/* =========================================================
+   LETTER HOVER
+========================================================= */
+
+.letter:hover {
+    transform:
+        translate(-50%, -50%)
+        scale(1.03);
+
+    filter:
+        drop-shadow(0 0 0.5rem white)
+        drop-shadow(
+            0 0 1.2rem
+            rgba(255, 255, 255, 0.8)
+        );
+}
+
+
+/* =========================================================
+   LETTER FADE
+========================================================= */
+
+.letter.fade {
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.95);
+}
+
+
+/* =========================================================
+   LETTER WING
+   LAYER 2
+========================================================= */
+
+.letter-wing {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 43rem;
+    height: auto;
+
+    z-index: 20;
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.7);
+
+    pointer-events: none;
+
+    user-select: none;
+    -webkit-user-drag: none;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.9s cubic-bezier(
+            0.17,
+            0.67,
+            0.3,
+            1.3
+        );
+}
+
+
+/* =========================================================
+   WING SHOW
+========================================================= */
+
+.letter-wing.show {
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+
+/* =========================================================
+   ICON CONTAINER
+   LAYER 3
+========================================================= */
+
+.contact-icons {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 30;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 0.6s ease;
+}
+
+.contact-icons.show {
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   ICON BASE
+========================================================= */
+
+.contact-icon {
+    position: absolute;
+
+    width: 4.5rem;
+    height: 4.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+/* =========================================================
+   ICON IMAGE
+========================================================= */
+
+.contact-icon img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    pointer-events: none;
+
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   ICON APPEAR
+========================================================= */
+
+.contact-icons.show .contact-icon {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   DESKTOP ICON POSITIONS
+========================================================= */
+
+.facebook {
+    top: calc(50% - 2.5rem);
+    left: calc(50% - 5.5rem);
+
+    animation:
+        facebookFloat
+        3.5s
+        ease-in-out
+        infinite;
+}
+
+.mail {
+    top: calc(50% - 1rem);
+    left: calc(50% + 2.5rem);
+
+    animation:
+        mailFloat
+        4s
+        ease-in-out
+        infinite;
+}
+
+.instagram {
+    top: calc(50% + 3.8rem);
+    left: calc(50% - 5.5rem);
+
+    animation:
+        instagramFloat
+        4.2s
+        ease-in-out
+        infinite;
+}
+
+.kakao {
+    top: calc(50% + 5.8rem);
+    left: calc(50% + 2.5rem);
+
+    animation:
+        kakaoFloat
+        3.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   ICON HOVER
+========================================================= */
+
+.contact-icon:hover {
+    filter:
+        drop-shadow(0 0 0.4rem white)
+        drop-shadow(0 0 1rem white)
+        drop-shadow(
+            0 0 2rem
+            rgba(255, 190, 220, 0.9)
+        );
+}
+
+
+/* =========================================================
+   FLOATING ANIMATIONS
+========================================================= */
+
+@keyframes facebookFloat {
+
+    0%,
+    100% {
+        margin-top: 0;
+        rotate: -3deg;
+    }
+
+    50% {
+        margin-top: -0.7vh;
+        rotate: 3deg;
+    }
+}
+
+@keyframes mailFloat {
+
+    0%,
+    100% {
+        margin-top: 0;
+        rotate: 3deg;
+    }
+
+    50% {
+        margin-top: 0.8vh;
+        rotate: -3deg;
+    }
+}
+
+@keyframes instagramFloat {
+
+    0%,
+    100% {
+        margin-top: 0;
+        rotate: 4deg;
+    }
+
+    50% {
+        margin-top: 0.8vh;
+        rotate: -4deg;
+    }
+}
+
+@keyframes kakaoFloat {
+
+    0%,
+    100% {
+        margin-top: 0;
+        rotate: -4deg;
+    }
+
+    50% {
+        margin-top: -0.7vh;
+        rotate: 4deg;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   834px ~ 522px
+========================================================= */
+
+@media (max-width: 52.125rem) {
+
+    .navbar {
+        height: 4.5rem;
+
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+
+    .logo {
+        width: 4.5rem;
+    }
+
+    .nav-links {
+        gap: 4vw;
+        margin-left: 4vw;
+    }
+
+    .nav-links img {
+        height: 1.2rem;
+    }
+
+    .contact {
+        height: calc(100vh - 4.5rem);
+    }
+
+    .letter {
+        width: 20rem;
+    }
+
+    .letter-wing {
+        width: 28rem;
+    }
+
+    .contact-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .facebook {
+        top: calc(50% - 2rem);
+        left: calc(50% - 4.5rem);
+    }
+
+    .mail {
+        top: calc(50% - 0.8rem);
+        left: calc(50% + 2rem);
+    }
+
+    .instagram {
+        top: calc(50% + 3rem);
+        left: calc(50% - 4.5rem);
+    }
+
+    .kakao {
+        top: calc(50% + 4.8rem);
+        left: calc(50% + 2rem);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   521px 이하
+
+   ⭐ 아이콘 전체를 더 아래로 이동
+   ⭐ FB / Instagram 간격 유지
+   ⭐ Mail / Kakao 간격 유지
+========================================================= */
+
+@media (max-width: 521px) {
+
+    .navbar {
+        height: 4rem;
+
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+
+    .logo {
+        width: 4rem;
+    }
+
+    .nav-links {
+        gap: 3vw;
+        margin-left: 3vw;
+    }
+
+    .nav-links img {
+        height: 1rem;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+        height: calc(100vh - 4rem);
+    }
+
+
+    /* LETTER */
+
+    .letter {
+        width: 70vw;
+
+        top: 50%;
+        left: 50%;
+
+        transform:
+            translate(-50%, -50%);
+    }
+
+
+    /* WING */
+
+    .letter-wing {
+        width: 95vw;
+
+        top: 50%;
+        left: 50%;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+
+    /* ICON SIZE */
+
+    .contact-icon {
+        width: 11vw !important;
+        height: 11vw !important;
+
+        min-width: 43px;
+        min-height: 43px;
+
+        max-width: 55px;
+        max-height: 55px;
+
+        margin: 0 !important;
+    }
+
+
+    /* =====================================================
+       FACEBOOK
+       ⭐ 기존 46% → 51%
+    ===================================================== */
+
+    .facebook {
+        top: 54% !important;
+        left: 50% !important;
+
+        transform:
+            translate(
+                -105%,
+                -50%
+            ) !important;
+    }
+
+
+    /* =====================================================
+       MAIL
+       ⭐ 기존 46% → 51%
+    ===================================================== */
+
+    .mail {
+        top: 52% !important;
+        left: 50% !important;
+
+        transform:
+            translate(
+                5%,
+                -50%
+            ) !important;
+    }
+
+
+    /* =====================================================
+       INSTAGRAM
+       ⭐ 기존 54% → 59%
+    ===================================================== */
+
+    .instagram {
+        top: 62% !important;
+        left: 45% !important;
+
+        transform:
+            translate(
+                -105%,
+                -50%
+            ) !important;
+    }
+
+
+    /* =====================================================
+       KAKAOTALK
+       ⭐ 기존 54% → 59%
+    ===================================================== */
+
+    .kakao {
+        top: 62% !important;
+        left: 55% !important;
+
+        transform:
+            translate(
+                5%,
+                -50%
+            ) !important;
+    }
+
+
+    /* MOBILE HOVER */
+
+    .facebook:hover,
+    .instagram:hover {
+        transform:
+            translate(
+                -105%,
+                -50%
+            )
+            scale(1.1) !important;
+    }
+
+    .mail:hover,
+    .kakao:hover {
+        transform:
+            translate(
+                5%,
+                -50%
+            )
+            scale(1.1) !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   400px 이하
+
+   ⭐ 여기서도 아이콘을 더 아래쪽에 유지
+========================================================= */
+
+@media (max-width: 400px) {
+
+    /* ICON SIZE */
+
+    .contact-icon {
+        width: 10vw !important;
+        height: 10vw !important;
+
+        min-width: 40px;
+        min-height: 40px;
+
+        max-width: 48px;
+        max-height: 48px;
+    }
+
+
+    /* FACEBOOK */
+
+    .facebook {
+        top: 53% !important;
+
+        transform:
+            translate(
+                -103%,
+                -50%
+            ) !important;
+    }
+
+
+    /* MAIL */
+
+    .mail {
+        top: 52% !important;
+
+        transform:
+            translate(
+                3%,
+                -50%
+            ) !important;
+    }
+
+
+    /* INSTAGRAM */
+
+    .instagram {
+        top: 59% !important;
+
+        transform:
+            translate(
+                -103%,
+                -50%
+            ) !important;
+    }
+
+
+    /* KAKAOTALK */
+
+    .kakao {
+        top: 59% !important;
+
+        transform:
+            translate(
+                3%,
+                -50%
+            ) !important;
+    }
+
+
+    /* HOVER */
+
+    .facebook:hover,
+    .instagram:hover {
+        transform:
+            translate(
+                -103%,
+                -50%
+            )
+            scale(1.1) !important;
+    }
+
+    .mail:hover,
+    .kakao:hover {
+        transform:
+            translate(
+                3%,
+                -50%
+            )
+            scale(1.1) !important;
+    }
+}
+
+
+/* =========================================================
+   KAKAOTALK QR MODAL
+========================================================= */
+
+.kakao-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(
+            50,
+            40,
+            30,
+            0.45
+        );
+
+    backdrop-filter: blur(0.3rem);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+/* =========================================================
+   MODAL ACTIVE
+========================================================= */
+
+.kakao-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   KAKAOTALK POPUP
+========================================================= */
+
+.kakao-popup {
+    position: relative;
+
+    width:
+        min(
+            75vw,
+            24rem
+        );
+
+    padding:
+        clamp(
+            1rem,
+            2vw,
+            2rem
+        );
+
+    background: white;
+
+    border-radius:
+        clamp(
+            0.7rem,
+            1.5vw,
+            1.2rem
+        );
+
+    box-shadow:
+        0 0 1.5rem
+        rgba(
+            255,
+            255,
+            255,
+            0.9
+        ),
+
+        0 1rem 3rem
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+
+    transform: scale(0.7);
+
+    transition:
+        transform 0.4s
+        cubic-bezier(
+            0.17,
+            0.67,
+            0.3,
+            1.3
+        );
+}
+
+
+/* =========================================================
+   POPUP SHOW
+========================================================= */
+
+.kakao-modal.active .kakao-popup {
+    transform: scale(1);
+}
+
+
+/* =========================================================
+   QR IMAGE
+========================================================= */
+
+.kakao-popup img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 0.5rem;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.close-kakao {
+    position: absolute;
+
+    top: -0.8rem;
+    right: -0.8rem;
+
+    width:
+        clamp(
+            2rem,
+            4vw,
+            2.8rem
+        );
+
+    aspect-ratio: 1 / 1;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #565656;
+
+    font-size:
+        clamp(
+            1.3rem,
+            2.5vw,
+            2rem
+        );
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 0.7rem white;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.close-kakao:hover {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 0 0.7rem white,
+
+        0 0 1.5rem
+        rgba(
+            255,
+            190,
+            215,
+            0.8
+        );
+}
